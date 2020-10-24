@@ -1,8 +1,8 @@
 {
-  "name": "ffc-template-node",
+  "name": "ffc-grants-reporting",
   "version": "1.0.0",
-  "description": "Base Hapi Node microservice template",
-  "homepage": "https://github.com/DEFRA/ffc-template-node",
+  "description": "Reporting example listening to application created event",
+  "homepage": "https://github.com/DEFRA/ffc-grants-reporting",
   "main": "app/index.js",
   "scripts": {
     "test": "jest --runInBand",
