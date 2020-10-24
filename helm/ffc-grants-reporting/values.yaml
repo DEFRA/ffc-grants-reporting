@@ -1,13 +1,12 @@
 environment: development
-name: ffc-template-node
-namespace: ffc-demo
-workstream: ffc-demo
-image: ffc-template-node
-
+name: ffc-grants-reporting
+namespace: ffc-grants
+workstream: ffc-grants
+image: ffc-grants-reporting
 labels: {}
 
 containerConfigMap:
-  name: ffc-template-node-config-map
+  name: ffc-grants-reporting-config-map
 
 deployment:
   restartPolicy: Always
