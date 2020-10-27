@@ -3,7 +3,12 @@ name: ffc-grants-reporting
 namespace: ffc-grants
 workstream: ffc-grants
 image: ffc-grants-reporting
+
 labels: {}
+
+azureIdentity:
+  clientID: not-a-real-clientID
+  resourceID: not-a-real-resourceID
 
 containerConfigMap:
   name: ffc-grants-reporting-config-map
