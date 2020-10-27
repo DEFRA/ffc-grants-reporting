@@ -2,6 +2,8 @@ const auth = require('@azure/ms-rest-nodeauth')
 const MessageReceiver = require('./messaging/message-receiver')
 const config = require('../config').messaging
 
+const receivedApplications = []
+
 process.on('SIGTERM', async () => {
   await messageService.closeConnections()
   process.exit(0)
@@ -18,9 +20,19 @@ class MessageService {
 
     const receiveApplicationAction = async message => {
       const messageObj = JSON.parse(message)
+      receivedApplications.push({
+        id: messageObj.confirmationId,
+        received: new Date().toISOString()
+      })
 
-      console.log('\n#####\nEOI submitted message received:')
-      console.log(`Confirmation ID: ${messageObj.payload.confirmationId}\n`)
+      console.log('\n#####\nEOI submitted message received')
+      console.log(`\nThere have been ${receivedApplications.length} applications in total:`)
+
+      receivedApplications.forEach(application => {
+        const date = application.received.split('T')[0]
+        const time = application.received.split('T')[1].split('.')[0]
+        console.log(`${application.id} on ${date} at ${time}`)
+      })
     }
 
     this.applicationReceiver = new MessageReceiver('application-topic-receiver', config.applicationTopic, credentials, receiveApplicationAction)
