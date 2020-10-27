@@ -26,6 +26,9 @@ container:
   readOnlyRootFilesystem: true
   allowPrivilegeEscalation: false
   port: 3000
+  messageQueueHost: dummy
+  applicationTopicAddress: application
+  applicationSubscriptionAddress: reporting
 
 livenessProbe:
   path: /healthz

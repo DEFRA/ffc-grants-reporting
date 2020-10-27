@@ -3,4 +3,7 @@
 data:
   NODE_ENV: {{ quote .Values.environment }}
   PORT: {{ quote .Values.container.port }}
+  MESSAGE_QUEUE_HOST: {{ quote .Values.container.messageQueueHost }}
+  APPLICATION_TOPIC_ADDRESS: {{ quote .Values.container.applicationTopicAddress }}
+  APPLICATION_SUBSCRIPTION_ADDRESS: {{ quote .Values.container.applicationSubscriptionAddress }}
 {{- end -}}
