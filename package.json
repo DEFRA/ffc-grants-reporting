@@ -1,6 +1,6 @@
 {
   "name": "ffc-grants-reporting",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Reporting example listening to application created event",
   "homepage": "https://github.com/DEFRA/ffc-grants-reporting",
   "main": "app/index.js",
